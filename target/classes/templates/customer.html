@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{_layout}">
+<head>
+    <title>Customers</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:replace="~{fragments/alert :: alert_headline}"></div>
+    <h1>Customers</h1>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Customer Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.name}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" th:if="${customers.totalPages > 0}">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${customers.number == 0} ? disabled">
+                    <a class="page-link fas fa-angle-double-left" th:href="@{/customer/show(page=1)}"></a>
+                </li>
+                <li class="page-item" th:classappend="${customers.number == 0} ? disabled">
+                    <a class="page-link fas fa-angle-left"
+                       th:href="@{/customer/show(page=${customers.number})}"></a>
+                </li>
+                <li class="page-item" th:classappend="${customers.number == (page - 1)} ? 'active pointer-disabled'"
+                    th:each="page : ${#numbers.sequence(pagerModel.startPage, pagerModel.endPage)}">
+                    <a class="page-link" th:href="@{/customer/show(page=${page})}" th:text="${page}"></a>
+                </li>
+                <li class="page-item" th:classappend="${customers.number + 1 == customers.totalPages} ? disabled">
+                    <a class="page-link fas fa-angle-right"
+                       th:href="@{/customer/show(page=${customers.number + 2})}"></a>
+                </li>
+                <li class="page-item" th:classappend="${customers.number + 1 == customers.totalPages} ? disabled">
+                    <a class="page-link fas fa-angle-double-right"
+                       th:href="@{/customer/show(page=${customers.totalPages})}"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

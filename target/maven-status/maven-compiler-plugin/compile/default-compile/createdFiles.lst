@@ -1,0 +1,15 @@
+de\fred4jupiter\springboot\thymeleaf\web\CustomerController.class
+de\fred4jupiter\springboot\thymeleaf\web\SecurityUtil.class
+de\fred4jupiter\springboot\thymeleaf\data\DataPopulator.class
+de\fred4jupiter\springboot\thymeleaf\web\IndexController.class
+META-INF\spring-configuration-metadata.json
+de\fred4jupiter\springboot\thymeleaf\props\UserRolesProperties.class
+de\fred4jupiter\springboot\thymeleaf\fleetsitedamage\CustomerRepository.class
+de\fred4jupiter\springboot\thymeleaf\fleetsitedamage\CustomerService.class
+de\fred4jupiter\springboot\thymeleaf\fleetsitedamage\Customer.class
+de\fred4jupiter\springboot\thymeleaf\Application.class
+de\fred4jupiter\springboot\thymeleaf\props\LocalUser.class
+de\fred4jupiter\springboot\thymeleaf\SecurityConfig.class
+de\fred4jupiter\springboot\thymeleaf\user\UserService.class
+de\fred4jupiter\springboot\thymeleaf\MvcConfig.class
+de\fred4jupiter\springboot\thymeleaf\web\PagerModel.class
